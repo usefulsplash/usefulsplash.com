@@ -1,7 +1,16 @@
 ---
 import FrontPageLayout from "../layouts/FrontPageLayout.astro";
+import pfp from "../assets/pfp.jpg";
 ---
 
-<FrontPageLayout>
-  <h1>Hello World</h1>
+<FrontPageLayout title={"Splash Zone"}>
+  <section>
+    <h1>Yo! This is Enrique!</h1>
+    <h2>
+      I'm a computer programmer and systems administrator from New York, with
+      interests in full-stack development, DevOps, content creation, and making
+      tech accessible to all.
+    </h2>
+    <img src={pfp} alt="me" />
+  </section>
 </FrontPageLayout>
