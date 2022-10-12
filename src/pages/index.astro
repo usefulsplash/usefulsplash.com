@@ -1,36 +1,45 @@
 ---
 import FrontPageLayout from "../layouts/FrontPageLayout.astro";
 import pfp from "../assets/pfp.jpg";
+
+const techs = [
+  "Python",
+  "HTML/CSS",
+  "JavaScript",
+  "Java",
+  "React",
+  "Astro",
+  "Jira/Confluence",
+  "Linux",
+  "Git",
+];
 ---
 
 <FrontPageLayout title={"Splash Zone"}>
-  <main>
+  <main class="px-64 bg-primary">
+    <header
+      class="flex flex-row justify-center items-center min-h-screen gap-20"
+    >
+      <section class="">
+        <h1 class="text-5xl pb-5 text-secondary">Yo! This is Enrique!</h1>
+        <h2 class="text-xl text-accent">
+          I'm a computer programmer and systems administrator from New York,
+          with interests in full-stack development, DevOps, content creation,
+          and making tech accessible to all.
+        </h2>
+      </section>
+      <img class="max-w-full h-auto shadow-2xl" src={pfp} alt="me" />
+    </header>
     <section>
-      <h1>Yo! This is Enrique!</h1>
-      <h2>
-        I'm a computer programmer and systems administrator from New York, with
-        interests in full-stack development, DevOps, content creation, and
-        making tech accessible to all.
-      </h2>
-      <img src={pfp} alt="me" />
-    </section>
-    <section>
-      <h3>About</h3>
-      <p>
+      <h3 class="text-4xl pb-3">About</h3>
+      <p class="text-xl pb-3">
         I graduated from St. John's University with a degree in Computer
         Science, with experience in languages and technologies such as:
       </p>
-      <ul>
-        <li>Python</li>
-        <li>HTML5/CSS</li>
-        <li>JavaScript</li>
-        <li>Java</li>
-        <li>React</li>
-        <li>Astro</li>
-        <li>JIRA/Confluence</li>
-        <li>Linux</li>
+      <ul class="list-disc list-inside columns-2 pb-3">
+        {techs.map((tech) => <li>{tech}</li>)}
       </ul>
-      <p>
+      <p class="text-xl">
         When I'm not working or studying, you'll catch me playing video games,
         tinkering with mechanical keyboards, or reading my favorite books and
         manga.
@@ -39,5 +48,15 @@ import pfp from "../assets/pfp.jpg";
     <section>
       <h3>Experience</h3>
     </section>
+    <section class="flex flex-row justify-center gap-2 pb-16">
+      <a href="mailto:emjavier16@gmail.com">mail</a>
+      <a href="https://twitter.com/emjavier16">twitter</a>
+      <a href="https://linkedin.com/in/enrique-javier-349655223">linkedin</a>
+      <a href="https://github.com/usefulsplash">github</a>
+    </section>
+    <footer>
+      <p class="text-center text-xs">Built and designed by Enrique Javier.</p>
+      <p class="text-center text-xs">All rights reserved. &copy; 2022</p>
+    </footer>
   </main>
 </FrontPageLayout>
