@@ -1,6 +1,7 @@
 ---
 import FrontPageLayout from "../layouts/FrontPageLayout.astro";
 import pfp from "../assets/pfp.jpg";
+import { Icon } from "astro-icon";
 
 const techs = [
   "Python",
@@ -22,7 +23,7 @@ const techs = [
     >
       <section class="">
         <h1 class="text-5xl pb-5 text-secondary">Yo! This is Enrique!</h1>
-        <h2 class="text-xl text-accent">
+        <h2 class="text-xl text-white">
           I'm a computer programmer and systems administrator from New York,
           with interests in full-stack development, DevOps, content creation,
           and making tech accessible to all.
@@ -30,13 +31,13 @@ const techs = [
       </section>
       <img class="max-w-full h-auto shadow-2xl" src={pfp} alt="me" />
     </header>
-    <section>
-      <h3 class="text-4xl pb-3">About</h3>
-      <p class="text-xl pb-3">
+    <section class="bg-accent p-11">
+      <h3 class="text-4xl pb-3 text-secondary">About</h3>
+      <p class="text-xl pb-3 text-white">
         I graduated from St. John's University with a degree in Computer
         Science, with experience in languages and technologies such as:
       </p>
-      <ul class="list-disc list-inside columns-2 pb-3">
+      <ul class="list-disc list-inside columns-2 pb-3 text-white">
         {techs.map((tech) => <li>{tech}</li>)}
       </ul>
       <p class="text-xl">
@@ -49,10 +50,30 @@ const techs = [
       <h3>Experience</h3>
     </section>
     <section class="flex flex-row justify-center gap-2 pb-16">
-      <a href="mailto:emjavier16@gmail.com">mail</a>
-      <a href="https://twitter.com/emjavier16">twitter</a>
-      <a href="https://linkedin.com/in/enrique-javier-349655223">linkedin</a>
-      <a href="https://github.com/usefulsplash">github</a>
+      <a
+        class="w-8 text-secondary hover:text-white"
+        href="mailto:emjavier16@gmail.com"
+      >
+        <Icon name="fluent:mail-16-filled" />
+      </a>
+      <a
+        class="w-8 text-secondary hover:text-white"
+        href="https://twitter.com/emjavier16"
+      >
+        <Icon name="carbon:logo-twitter" />
+      </a>
+      <a
+        class="w-8 text-secondary hover:text-white"
+        href="https://linkedin.com/in/enrique-javier-349655223"
+      >
+        <Icon name="carbon:logo-linkedin" />
+      </a>
+      <a
+        class="w-8 text-secondary hover:text-white"
+        href="https://github.com/usefulsplash"
+      >
+        <Icon name="carbon:logo-github" />
+      </a>
     </section>
     <footer>
       <p class="text-center text-xs">Built and designed by Enrique Javier.</p>
