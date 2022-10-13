@@ -1,5 +1,6 @@
 ---
 import FrontPageLayout from "../layouts/FrontPageLayout.astro";
+import Experience from "../components/Experience.astro";
 import pfp from "../assets/pfp.jpg";
 import { Icon } from "astro-icon";
 
@@ -22,14 +23,20 @@ const techs = [
       class="flex flex-row justify-center items-center min-h-screen gap-20"
     >
       <section class="">
-        <h1 class="text-5xl pb-5 text-secondary">Yo! This is Enrique!</h1>
-        <h2 class="text-xl text-white">
+        <h1 class="text-5xl pb-5 text-secondary font-mono">
+          Yo! This is Enrique!
+        </h1>
+        <h2 class="text-xl text-white font-mono">
           I'm a computer programmer and systems administrator from New York,
           with interests in full-stack development, DevOps, content creation,
           and making tech accessible to all.
         </h2>
       </section>
-      <img class="max-w-full h-auto shadow-2xl" src={pfp} alt="me" />
+      <img
+        class="max-w-full h-auto drop-shadow-2xl rounded-2xl"
+        src={pfp}
+        alt="me"
+      />
     </header>
     <section class="bg-accent p-11">
       <h3 class="text-4xl pb-3 text-secondary">About</h3>
@@ -46,10 +53,8 @@ const techs = [
         manga.
       </p>
     </section>
-    <section>
-      <h3>Experience</h3>
-    </section>
-    <section class="flex flex-row justify-center gap-2 pb-16">
+    <Experience />
+    <section class="flex flex-row justify-center gap-2 py-8">
       <a
         class="w-8 text-secondary hover:text-white"
         href="mailto:emjavier16@gmail.com"
@@ -75,9 +80,9 @@ const techs = [
         <Icon name="carbon:logo-github" />
       </a>
     </section>
-    <footer>
-      <p class="text-center text-xs">Built and designed by Enrique Javier.</p>
-      <p class="text-center text-xs">All rights reserved. &copy; 2022</p>
+    <footer class="text-center text-xs text-white pb-16">
+      <p>Built and designed by Enrique Javier.</p>
+      <p>All rights reserved. &copy; 2022</p>
     </footer>
   </main>
 </FrontPageLayout>
