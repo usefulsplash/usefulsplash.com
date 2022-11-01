@@ -3,21 +3,54 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Hack Nerd";
+  font-family: "Spectral";
+  src: url("/fonts/Spectral-Regular.ttf") format("ttf");
   font-style: normal;
   font-weight: normal;
   font-display: swap;
-  src: url("/fonts/Hack\ Regular\ Nerd\ Font\ Complete.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Spectral";
+  src: url("/fonts/Spectral-Bold.ttf") format("ttf");
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("/fonts/SourceSansPro-Regular.ttf") format("ttf");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("/fonts/SourceSansPro-Bold.ttf") format("ttf");
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Hack Nerd";
+  src: url("/fonts/Hack\ Regular\ Nerd\ Font\ Complete.woff2") format("woff2");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hack Nerd";
+  src: url("/fonts/Hack\ Bold\ Nerd\ Font\ Complete.woff2") format("woff2");
   font-style: normal;
   font-weight: bold;
   font-display: swap;
-  src: url("/fonts/Hack\ Bold\ Nerd\ Font\ Complete.woff2") format("woff2");
 }
 
 html {
   scroll-behavior: smooth;
+  font-family: Source Sans Pro;
 }
