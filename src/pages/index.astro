@@ -1,92 +1,18 @@
 ---
 import FrontPageLayout from "../layouts/FrontPageLayout.astro";
+import Intro from "../components/Intro.astro";
+import About from "../components/About.astro";
 import Experience from "../components/Experience.astro";
-import pfp from "../assets/pfp.jpg";
-import { Icon } from "astro-icon";
-
-const techs = [
-  "Python",
-  "HTML/CSS",
-  "JavaScript",
-  "Java",
-  "React",
-  "Astro",
-  "Jira/Confluence",
-  "Linux",
-  "Git",
-];
+import Socials from "../components/Socials.astro";
+import Credits from "../components/Credits.astro";
 ---
 
 <FrontPageLayout title={"Splash Zone"}>
-  <main class="px-64 bg-primary">
-    <header
-      class="flex flex-row justify-center items-center min-h-screen gap-20"
-    >
-      <section class="">
-        <h1 class="text-5xl pb-5 text-secondary">Yo! This is Enrique!</h1>
-        <h2 class="text-xl text-white">
-          I'm a computer programmer and systems administrator from New York,
-          with interests in full-stack development, DevOps, content creation,
-          and making tech accessible to all.
-        </h2>
-      </section>
-      <img
-        class="max-w-full h-auto drop-shadow-2xl rounded-2xl"
-        src={pfp}
-        alt="me"
-      />
-    </header>
-    <section class="p-11">
-      <h3 class="text-4xl pb-3 text-secondary">About</h3>
-      <p class="text-xl pb-3 text-white">
-        I graduated from St. John's University with a degree in Computer
-        Science, with experience in languages and technologies such as:
-      </p>
-      <ul class="list-disc list-inside columns-2 pb-3 text-white">
-        {techs.map((tech) => <li>{tech}</li>)}
-      </ul>
-      <p class="text-xl text-white">
-        When I'm not working or studying, you'll catch me playing video games,
-        tinkering with mechanical keyboards, or reading my favorite books and
-        manga.
-      </p>
-    </section>
+  <main class="px-96 bg-primary">
+    <Intro />
+    <About />
     <Experience />
-    <section class="flex flex-row justify-center gap-2 py-8">
-      <a
-        class="w-8 text-secondary hover:text-white"
-        href="mailto:emjavier16@gmail.com"
-      >
-        <Icon name="fluent:mail-16-filled" />
-      </a>
-      <a
-        class="w-8 text-secondary hover:text-white"
-        href="https://twitter.com/emjavier16"
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        <Icon name="carbon:logo-twitter" />
-      </a>
-      <a
-        class="w-8 text-secondary hover:text-white"
-        href="https://linkedin.com/in/enrique-javier-349655223"
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        <Icon name="carbon:logo-linkedin" />
-      </a>
-      <a
-        class="w-8 text-secondary hover:text-white"
-        href="https://github.com/usefulsplash"
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        <Icon name="carbon:logo-github" />
-      </a>
-    </section>
-    <footer class="text-center text-xs text-white pb-16">
-      <p>Built and designed by Enrique Javier.</p>
-      <p>All rights reserved. &copy; 2022</p>
-    </footer>
+    <Socials />
+    <Credits />
   </main>
 </FrontPageLayout>
