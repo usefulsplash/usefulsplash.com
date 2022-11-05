@@ -1,53 +1,85 @@
 <section class="experience">
   <h3 class="text-4xl font-bold pb-3 text-secondary">Experience</h3>
   <div class="tabs">
-    <ul class="tabs-headers flex text-white border-2 cursor-pointer">
-      <li class="list-none ml-0 mb-0 py-2 px-5 font-bold bg-accent">Hermes</li>
+    <ul class="tabs-header flex text-white border-2 cursor-pointer">
+      <li class="default-tab list-none ml-0 mb-0 py-2 px-5 font-bold bg-accent">
+        Hermes
+      </li>
       <li class="list-none ml-0 mb-0 py-2 px-5 font-bold">The MET</li>
     </ul>
     <div class="tabs-content border-2 border-t-0 bg-accent text-white p-7">
-      <h3 class="text-2xl">
-        Information Technology Intern - Hermes of Paris USA
-      </h3>
-      <p class="text-xs pb-2">June 2021 - December 2021</p>
-      <ul class="list-outside list-disc pl-4">
-        <li>
-          Designed an improved knowledge base in Confluence for internal use,
-          consolidating data from disparate sources and teams to easily access
-          important info.
-        </li>
-        <li>
-          Spearheaded security documentation and procedures of point-of-sales
-          systems ahead of the American Dream location's grand opening
-        </li>
-        <li>
-          Collaborated with server migration team to set up two new remote data
-          centers, with task ranging from operating system setup, network tests,
-          physical installation, and progress documentation on Jira.
-        </li>
-      </ul>
-
-      <br />
-
-      <h3 class="text-2xl">
-        Buildings and Management Intern - The Metropolitan Museum of Art
-      </h3>
-      <p class="text-xs pb-2">January 2017 - May 2017</p>
-      <ul class="list-outside list-disc pl-4">
-        <li>
-          Consolidating archived architecture spending budget data from past
-          projects into Excel.
-        </li>
-        <li>
-          Assisted in logistics planning for new exhibits by working with
-          contractors and curators to discuss physical exhibit components
-          (placards, glass cases, etc.).
-        </li>
-        <li>
-          Faciilitated guided tours for new and upcoming exhibits throughout the
-          museum.
-        </li>
-      </ul>
+      <div class="tab">
+        <h3 class="text-2xl">
+          Information Technology Intern - Hermes of Paris USA
+        </h3>
+        <p class="text-xs pb-2">June 2021 - December 2021</p>
+        <ul class="list-outside list-disc pl-4">
+          <li>
+            Designed an improved knowledge base in Confluence for internal use,
+            consolidating data from disparate sources and teams to easily access
+            important info.
+          </li>
+          <li>
+            Spearheaded security documentation and procedures of point-of-sales
+            systems ahead of the American Dream location's grand opening
+          </li>
+          <li>
+            Collaborated with server migration team to set up two new remote
+            data centers, with task ranging from operating system setup, network
+            tests, physical installation, and progress documentation on Jira.
+          </li>
+        </ul>
+      </div>
+      <div class="tab">
+        <h3 class="text-2xl">
+          Buildings and Management Intern - The Metropolitan Museum of Art
+        </h3>
+        <p class="text-xs pb-2">January 2017 - May 2017</p>
+        <ul class="list-outside list-disc pl-4">
+          <li>
+            Consolidating archived architecture spending budget data from past
+            projects into Excel.
+          </li>
+          <li>
+            Assisted in logistics planning for new exhibits by working with
+            contractors and curators to discuss physical exhibit components
+            (placards, glass cases, etc.).
+          </li>
+          <li>
+            Faciilitated guided tours for new and upcoming exhibits throughout
+            the museum.
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  function createTabs(element) {
+    const header = element.querySelector(".tabs-header");
+    const content = element.querySelector(".tabs-content");
+    const tab_headers = [...header.children];
+    const tab_contents = [...content.children];
+    tab_contents.forEach((x) => (x.style.display = "none"));
+    let current_tab_index = -1;
+
+    function setTab(index) {
+      if (current_tab_index > -1) {
+        tab_contents[current_tab_index].style.display = "none";
+      }
+      tab_contents[index].style.display = "block";
+      current_tab_index = index;
+    }
+
+    let default_tab_index = tab_headers.findIndex((x) => {
+      return [...x.classList].indexOf("default_tab") > -1;
+    });
+
+    default_tab_index = default_tab_index === -1 ? 0 : default_tab_index;
+    setTab(default_tab_index);
+    tab_headers.forEach((x, i) => (x.onclick = (event) => setTab(i)));
+  }
+
+  [...document.querySelectorAll(".tabs")].forEach((x) => createTabs(x));
+</script>
