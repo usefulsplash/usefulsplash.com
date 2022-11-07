@@ -1,16 +1,62 @@
 ---
+import pfp from "/assets/pfp.jpg";
+
 import FrontPageLayout from "../layouts/FrontPageLayout.astro";
-import Intro from "../components/Intro.astro";
-import About from "../components/About.astro";
 import Experience from "../components/Experience.astro";
 import Socials from "../components/Socials.astro";
 import Credits from "../components/Credits.astro";
+
+const techs = [
+  "Python",
+  "HTML/CSS",
+  "JavaScript",
+  "Java",
+  "React",
+  "Astro",
+  "Jira/Confluence",
+  "Linux",
+  "Git",
+];
 ---
 
 <FrontPageLayout title={"Splash Zone"}>
   <main class="px-96 bg-primary">
-    <Intro />
-    <About />
+    <section
+      class="flex flex-row justify-center items-center min-h-screen gap-20"
+    >
+      <div class="w-1/2">
+        <h1 class="text-5xl font-bold pb-5 text-white">
+          Yo! This is <span class="text-secondary">Enrique</span>!
+        </h1>
+        <h2 class="text-2xl text-white">
+          I'm a software engineer from New York, with interests in full-stack
+          development, DevOps, content creation, and making tech accessible to
+          all.
+        </h2>
+      </div>
+      <div class="w-1/2 rounded-2xl bg-secondary">
+        <img
+          class="w-full h-full rounded-2xl -translate-x-2 -translate-y-2 hover:-translate-x-5 hover:-translate-y-5 duration-300"
+          src={pfp}
+          alt="me"
+        />
+      </div>
+    </section>
+    <section class="pb-11">
+      <h3 class="text-4xl font-bold pb-3 text-secondary">About</h3>
+      <p class="text-xl pb-3 text-white">
+        I graduated from St. John's University with a degree in Computer
+        Science, with experience in languages and technologies such as:
+      </p>
+      <ul class="list-disc list-inside columns-2 pb-3 text-white">
+        {techs.map((tech) => <li>{tech}</li>)}
+      </ul>
+      <p class="text-xl text-white">
+        When I'm not working or studying, you'll catch me playing video games,
+        tinkering with mechanical keyboards, or reading my favorite books and
+        manga.
+      </p>
+    </section>
     <Experience />
     <Socials />
     <Credits />
