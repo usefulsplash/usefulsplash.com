@@ -2,12 +2,12 @@
   <h3 class="text-4xl font-bold pb-3 text-secondary">Experience</h3>
   <div class="tabs">
     <ul class="tabs-header flex text-white border-2 cursor-pointer">
-      <li class="default-tab list-none ml-0 mb-0 py-2 px-5 font-bold bg-accent">
+      <li class="default-tab list-none ml-0 mb-0 py-2 px-5 font-bold">
         Hermes
       </li>
       <li class="list-none ml-0 mb-0 py-2 px-5 font-bold">The MET</li>
     </ul>
-    <div class="tabs-content border-2 border-t-0 bg-accent text-white p-7">
+    <div class="tabs-content border-2 border-t-0 text-white p-7">
       <div class="tab">
         <h3 class="text-2xl">
           Information Technology Intern - Hermes of Paris USA
@@ -66,8 +66,10 @@
 
     function setTab(index) {
       if (current_tab_index > -1) {
+        tab_headers[current_tab_index].classList.remove("bg-accent");
         tab_contents[current_tab_index].style.display = "none";
       }
+      tab_headers[index].classList.add("bg-accent");
       tab_contents[index].style.display = "block";
       current_tab_index = index;
     }
