@@ -2,28 +2,34 @@
 import Card from "./Card.astro";
 
 const projects = [
-    {
-        title: "usefulsplash.com",
-        body: "This very website! A personal portfolio and blog to get to know me better.",
-        techs: ["Astro", "HTML", "CSS", "JavaScript"]
-    },
-    {
-        title: "Game Shelf Showcase",
-        body: "[Upcoming] Web App for showcasing your favorite games, powered by the IGDB API.",
-        techs: ["MongoDB", "Express", "React", "NodeJS", "Vite"]
-    }
+  {
+    title: "usefulsplash.com",
+    body: "This very website! A personal portfolio and blog to get to know me better.",
+    techs: ["Astro", "HTML", "CSS", "JavaScript"],
+  },
+  {
+    title: "Game Shelf Showcase",
+    body: "[Upcoming] Web App for showcasing your favorite games, powered by the IGDB API.",
+    techs: ["MongoDB", "Express", "React", "NodeJS", "Vite"],
+  },
 ];
 ---
 
 <section id="projects">
-    <h1 class="text-4xl font-bold pb-3 text-secondary">Projects</h1>
-    <div class = "container grid grid-cols-2 gap-6 text-white">
-        {projects.map((project) =>
-            <Card>
-                <h3 class="text-2xl pb-4">{project.title}</h3>
-                  <p class="pb-2">{project.body}</p>
-                <ul class="flex items-center gap-3">{project.techs.map((tech) => <li class="rounded-sm bg-secondary text-black p-1">{tech}</li>)}</ul>
-            </Card>
-        )}
-    </div>
+  <h1 class="text-4xl font-bold pb-3 text-secondary">Projects</h1>
+  <div class="container grid grid-cols-2 gap-6 text-white">
+    {
+      projects.map((project) => (
+        <Card>
+          <h3 class="text-2xl pb-4">{project.title}</h3>
+          <p class="pb-2">{project.body}</p>
+          <ul class="flex items-center gap-3">
+            {project.techs.map((tech) => (
+              <li class="rounded-sm bg-secondary text-black p-1">{tech}</li>
+            ))}
+          </ul>
+        </Card>
+      ))
+    }
+  </div>
 </section>

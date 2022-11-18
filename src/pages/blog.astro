@@ -6,17 +6,19 @@ const posts = await Astro.glob("../posts/*.md");
 ---
 
 <BlogLayout title={"Splash Blog"}>
-    <main class="text-white">
-        <header>
-            <h1 class="text-5xl">Blog Posts</h1>
-        </header>
-        <section>
-            {posts.map(post => (
-                <Card>
-                    <h1>{post.frontmatter.title}</h1>
-                    <p>{post.frontmatter.excerpt}</p>
-                </Card>
-            ))}
-        </section>
-    </main>
+  <main class="text-white">
+    <header>
+      <h1 class="text-5xl">Blog Posts</h1>
+    </header>
+    <section>
+      {
+        posts.map((post) => (
+          <Card>
+            <h1>{post.frontmatter.title}</h1>
+            <p>{post.frontmatter.excerpt}</p>
+          </Card>
+        ))
+      }
+    </section>
+  </main>
 </BlogLayout>
