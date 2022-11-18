@@ -18,8 +18,12 @@ const projects = [
 <section id="projects">
     <h1 class="text-4xl font-bold pb-3 text-secondary">Projects</h1>
     <div class = "container grid grid-cols-2 gap-6 text-white">
-        {projects.map(project => (
-            <Card title={project.title} body ={project.body} techs={project.techs} />
-        ))}
+        {projects.map((project) =>
+            <Card frontPage={true}>
+                <h3 class="text-2xl pb-4">{project.title}</h3>
+                  <p class="pb-2">{project.body}</p>
+                <ul class="flex items-center gap-3">{project.techs.map((tech) => <li class="rounded-sm bg-secondary text-black p-1">{tech}</li>)}</ul>
+            </Card>
+        )}
     </div>
 </section>
