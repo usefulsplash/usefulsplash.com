@@ -1,6 +1,15 @@
 ---
+export interface Props {
+    title: string;
+    body: string;
+    techs: string[];
+}
 
+const { title, body, techs } = Astro.props as Props;
 ---
-<div>
-    <slot />
+
+<div class="card bg-accent p-5 rounded-lg">
+    <h3 class="text-2xl pb-4">{title}</h3>
+    <p class="pb-2">{body}</p>
+    <ul class="flex items-center gap-3">{techs.map((tech) => <li class="rounded-sm bg-secondary text-black p-1">{tech}</li>)}</ul>
 </div>

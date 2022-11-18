@@ -1,0 +1,25 @@
+---
+import Card from "./Card.astro";
+
+const projects = [
+    {
+        title: "usefulsplash.com",
+        body: "This very website! A personal portfolio and blog to get to know me better.",
+        techs: ["Astro", "HTML", "CSS", "JavaScript"]
+    },
+    {
+        title: "Game Shelf Showcase",
+        body: "Web App for showcasing your favorite games, powered by the IGDB API.",
+        techs: ["MongoDB", "Express", "React", "NodeJS", "Vite"]
+    }
+];
+---
+
+<section id="projects">
+    <h1 class="text-4xl font-bold pb-3 text-secondary">Projects</h1>
+    <div class = "container grid grid-cols-2 gap-6 text-white">
+        {projects.map(project => (
+            <Card title={project.title} body ={project.body} techs={project.techs} />
+        ))}
+    </div>
+</section>
