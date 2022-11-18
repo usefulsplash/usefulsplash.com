@@ -1,7 +1,6 @@
 ---
 import pfp from "/assets/pfp.jpg";
 
-import Credits from "../components/Credits.astro";
 import Experience from "../components/Experience.astro";
 import Projects from "../components/Projects.astro";
 import Socials from "../components/Socials.astro";
@@ -21,7 +20,7 @@ const techs = [
 ---
 
 <FrontPageLayout title={"Splash Zone"}>
-  <main class="px-96 bg-primary">
+  <main>
     <section
       class="flex flex-row justify-center items-center min-h-screen gap-20"
     >
@@ -77,6 +76,5 @@ const techs = [
     <Experience />
     <Projects />
     <Socials />
-    <Credits />
   </main>
 </FrontPageLayout>
