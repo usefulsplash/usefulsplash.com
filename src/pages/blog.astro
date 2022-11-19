@@ -1,11 +1,11 @@
 ---
 import Card from "../components/Card.astro";
-import BlogLayout from "../layouts/BlogLayout.astro";
+import Layout from "../layouts/Layout.astro";
 
 const posts = await Astro.glob("../posts/*.md");
 ---
 
-<BlogLayout title={"Splash Blog"}>
+<Layout title={"Splash Blog"}>
   <main class="text-white">
     <header>
       <h1 class="text-5xl">Blog Posts</h1>
@@ -13,12 +13,10 @@ const posts = await Astro.glob("../posts/*.md");
     <section>
       {
         posts.map((post) => (
-          <Card>
-            <h1>{post.frontmatter.title}</h1>
-            <p>{post.frontmatter.excerpt}</p>
-          </Card>
+          <h1>{post.frontmatter.title}</h1>
+          <p>{post.frontmatter.excerpt}</p>
         ))
       }
     </section>
   </main>
-</BlogLayout>
+</Layout>
