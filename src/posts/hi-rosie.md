@@ -1,8 +1,8 @@
 ---
 title: Hi Rosie
 slug: hi-rosie
-excerpt: Hi Rosie!
-date: 2022-11-18
+excerpt: Told you I could get it done today :)
+date: November 18, 2022
 ---
 
-Told you I could get it done today.
+## Told you I could get it done today :)

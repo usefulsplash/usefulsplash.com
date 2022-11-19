@@ -1,5 +1,4 @@
 ---
-import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
 
 const posts = await Astro.glob("../posts/*.md");
@@ -8,13 +7,28 @@ const posts = await Astro.glob("../posts/*.md");
 <Layout title={"Splash Blog"}>
   <main class="text-white">
     <header>
-      <h1 class="text-5xl">Blog Posts</h1>
+      <h1 class="text-6xl text-secondary py-16">Blog Posts</h1>
     </header>
     <section>
       {
         posts.map((post) => (
-          <h1>{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.excerpt}</p>
+          <div class="py-8">
+            <time datetime="post.frontmatter.date">
+              {new Intl.DateTimeFormat("en", {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+              }).format(new Date(post.frontmatter.date))}
+            </time>
+            <br />
+            <a
+              href={`/${post.frontmatter.slug}`}
+              class="text-2xl text-secondary hover:text-white duration-300"
+            >
+              {post.frontmatter.title}
+            </a>
+            <p>{post.frontmatter.excerpt}</p>
+          </div>
         ))
       }
     </section>

@@ -4,7 +4,7 @@ import pfp from "/assets/pfp.jpg";
 import Experience from "../components/Experience.astro";
 import Projects from "../components/Projects.astro";
 import Socials from "../components/Socials.astro";
-import FrontPageLayout from "../layouts/FrontPageLayout.astro";
+import Layout from "../layouts/Layout.astro";
 
 const techs = [
   "Python",
@@ -19,7 +19,7 @@ const techs = [
 ];
 ---
 
-<FrontPageLayout title={"Splash Zone"}>
+<Layout title={"Splash Zone"}>
   <main>
     <section
       class="flex flex-row justify-center items-center min-h-screen gap-20"
@@ -83,4 +83,4 @@ const techs = [
     <Projects />
     <Socials />
   </main>
-</FrontPageLayout>
+</Layout>
