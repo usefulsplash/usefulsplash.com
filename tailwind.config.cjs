@@ -8,6 +8,11 @@ module.exports = {
         secondary: "#BFC89E",
         accent: "#4A5650",
       },
+      fontFamily: {
+        source: ["Source Sans Pro"],
+        hack: ["Hack Nerd"],
+        spectral: ["Spectral"],
+      },
     },
   },
   plugins: [],
