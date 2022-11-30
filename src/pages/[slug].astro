@@ -1,5 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import PostLayout from "../layouts/PostLayout.astro";
 
 export async function getStaticPaths() {
   const posts = await Astro.glob("../posts/*.md");
@@ -17,10 +17,10 @@ export async function getStaticPaths() {
 const { Content, frontmatter } = Astro.props.post;
 ---
 
-<Layout title={frontmatter.title}>
+<PostLayout title={frontmatter.title}>
   <section class="text-white m-16">
     <button><a href="/blog">Back</a></button>
     <h1 class="text-4xl pb-8">{frontmatter.title}</h1>
     <Content />
   </section>
-</Layout>
+</PostLayout>

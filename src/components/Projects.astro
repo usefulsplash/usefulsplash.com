@@ -16,16 +16,18 @@ const projects = [
 ---
 
 <section id="projects">
-  <h1 class="text-4xl font-bold pb-3 text-secondary">Projects</h1>
+  <h1 class="text-3xl font-bold pb-3 text-secondary font-hack">Projects</h1>
   <div class="container grid grid-cols-2 gap-6 text-white pb-8">
     {
       projects.map((project) => (
         <Card>
-          <h3 class="text-2xl pb-4">{project.title}</h3>
-          <p class="pb-2">{project.body}</p>
+          <h3 class="text-2xl pb-4 font-hack">{project.title}</h3>
+          <p class="pb-2 font-source text-lg">{project.body}</p>
           <ul class="flex items-center gap-3">
             {project.techs.map((tech) => (
-              <li class="rounded-sm bg-secondary text-black p-1">{tech}</li>
+              <li class="rounded-sm bg-secondary text-black p-1 text-sm font-hack">
+                {tech}
+              </li>
             ))}
           </ul>
         </Card>
