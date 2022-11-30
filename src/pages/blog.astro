@@ -1,18 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const posts = await Astro.glob("../posts/*.md");
+const posts = (await Astro.glob("../posts/*.mdx")).sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).valueOf() -
+    new Date(a.frontmatter.date).valueOf()
+);
 ---
 
 <Layout title={"Splash Blog"}>
   <main class="text-white">
     <header>
-      <h1 class="text-6xl text-secondary py-16">Blog Posts</h1>
+      <h1 class="text-5xl text-secondary py-12 font-hack">Blog Posts</h1>
     </header>
     <section>
       {
         posts.map((post) => (
-          <div class="py-8">
+          <div class="py-8 text-lg font-source">
             <time datetime="post.frontmatter.date">
               {new Intl.DateTimeFormat("en", {
                 year: "numeric",
